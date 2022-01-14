@@ -1,5 +1,16 @@
 # TaskManager
 
+## What I've learned
+- How to do routes in Angular.
+- TDD - Test-Driven Development.
+- Directives.
+- One Way Data Binding.
+- Two Way Data Binding.
+- Import and Export Modules.
+- Simple way to use router-outlet.
+
+##
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
 ## Development server
