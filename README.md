@@ -1,13 +1,17 @@
 # TaskManager
 
-## What I've learned
+This is sample applition to learn and apply some Angular concepts. The application is for registering a task using localstorage to persistence, simulating the database.
+
+## What I've learned about Angular
 - How to do routes in Angular.
 - TDD - Test-Driven Development.
-- Directives.
+- Directives, Event and Properties bind.
 - One Way Data Binding.
 - Two Way Data Binding.
 - Import and Export Modules.
 - Simple way to use router-outlet.
+- Conditional *ngIf
+- Template variables
 
 ##
 
