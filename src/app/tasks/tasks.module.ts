@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 
 import { TaskService } from './shared';
 import { TaskListComponent } from './listing';
+import { RegisterTasksComponent } from './register';
 
 @NgModule({
   declarations: [
     TaskListComponent,
+    RegisterTasksComponent,
   ],
   imports: [
     CommonModule,

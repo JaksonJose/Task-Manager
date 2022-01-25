@@ -1,0 +1,26 @@
+<h1>register Tasks</h1>
+
+<div class="well">
+  <!--#formTask="ngForm" is a local variabel, so I can use it later -->
+  <form #formTask="ngForm">
+    <div class="form-group">
+      <label for="nome">Task:</label>
+      <input type="text" class="form-control" id="nome" name="nome" minlength="5" required
+      [(ngModel)]="task.name" #name="ngModel" /> 
+      <div class="alert alert-danger" *ngIf="name.errors && (name.dirty || name.touched)">
+        <div [hidden]="!name.errors.required"> <!-- It'll appear the div required or minlength -->
+          Type your task.
+        </div>
+        <div [hidden]="!name.errors.minlength">
+          The task should have at least 5 caracter.
+        </div>
+      </div>
+    </div>
+    <div class="form-group text-center">
+      <input type="submit" class="btn btn-success" value="Cadastrar" (click)="register()" [disabled]="!formTask.form.valid"> <!-- using the formTask -->
+      <a class="btn btn-default" [routerLink]="['/tasks/listing']">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" ></span> Back
+      </a>
+    </div>
+  </form>
+</div>
