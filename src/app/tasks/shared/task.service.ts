@@ -67,7 +67,11 @@ export class TaskService {
     localStorage['tasks'] = JSON.stringify(tasks);
   }
 
-  public changeTaskStatus(id: number) : void {
+  /**
+   * Updadte the Task Status if it's completed or not
+   * @param id 
+   */
+  public updateTaskStatusById(id: number) : void {
     const tasks: Task[] = this.fetchAllTasks();
 
     tasks.forEach((obj, index, objs) => {

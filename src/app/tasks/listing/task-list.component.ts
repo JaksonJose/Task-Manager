@@ -36,4 +36,15 @@ export class TaskListComponent implements OnInit {
       this.tasks = this.fetchAllTasks();
     }
   }
+
+  /**
+   * Update the task status if it's completed or not
+   * @param task 
+   */
+  public updateTaskStatus(task: Task): void{
+    if(confirm(`Do you want to change the "${task.name}" task status?`)){
+      this.taskService.updateTaskStatusById(task.id);
+      this.tasks = this.fetchAllTasks();
+    }
+  }
 }
