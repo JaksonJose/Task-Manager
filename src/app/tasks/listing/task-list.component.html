@@ -19,7 +19,7 @@
         <input type="checkbox" [value]="task.id" [checked]="task.completed"/>
       </td>
       <td class=text-center style="width: 200px;">
-        <a title="Edit" alt="Edit" class="btn btn-xs btn-info" style="margin-right: 10px;">
+        <a title="Edit" alt="Edit" class="btn btn-xs btn-info" style="margin-right: 10px;" [routerLink]="['/task/register', task.id]">
           <span class="glyphicon glyphicon-pencil" area-hidden="true"></span> Edit
         </a>
         <a href="#" title="Remove" alt="Remove" class="btn btn-xs btn-danger">
