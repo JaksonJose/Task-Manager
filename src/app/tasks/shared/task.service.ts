@@ -18,12 +18,21 @@ export class TaskService {
     return tasks ? JSON.parse(tasks) : [];
   }
 
+  /**
+   * Fetch one task by its id.
+   * @param id 
+   * @returns task object
+   */
   public fetchTaskById(id: number) : Task {
     const tasks: Task[] = this.fetchAllTasks();
     
     return tasks.find(task => task.id === id);
   }
 
+  /**
+   * Register the task and assign and id to it.
+   * @param task 
+   */
   public registerTask(task: Task) : void {
     const tasks = this.fetchAllTasks();
     task.id = new Date().getTime();
@@ -47,7 +56,11 @@ export class TaskService {
     localStorage['tasks'] = JSON.stringify(tasks);
   }
 
-  public removeTask(id: number) : void {
+  /**
+   * Remove the Task by its id
+   * @param id 
+   */
+  public removeTaskById(id: number) : void {
     let tasks: Task[] = this.fetchAllTasks();
 
     tasks = tasks.filter(task => task.id !== id);

@@ -13,10 +13,27 @@ export class TaskListComponent implements OnInit {
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
-    this.tasks = this.getAllTasks();
+    this.tasks = this.fetchAllTasks();
   }
 
-  public getAllTasks(): Array<Task> {
+  /**
+   * Fetch all tasks
+   * @returns Array<Task>
+   */
+  public fetchAllTasks(): Array<Task> {
     return this.taskService.fetchAllTasks();
+  }
+
+  /**
+   * Remove the task and prevent the page refresh
+   * @param $event 
+   * @param task 
+   */
+  public removeTask($event: any, task: Task): void {
+    $event.preventDefault();
+    if (confirm(`Do you want to remove the task "${task.name}"?`)){
+      this.taskService.removeTaskById(task.id);
+      this.tasks = this.fetchAllTasks();
+    }
   }
 }

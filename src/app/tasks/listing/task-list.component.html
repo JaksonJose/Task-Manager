@@ -22,7 +22,7 @@
         <a title="Edit" alt="Edit" class="btn btn-xs btn-info" style="margin-right: 10px;" [routerLink]="['/tasks/edit', task.id]">
           <span class="glyphicon glyphicon-pencil" area-hidden="true"></span> Edit
         </a>
-        <a href="#" title="Remove" alt="Remove" class="btn btn-xs btn-danger">
+        <a href="#" title="Remove" alt="Remove" class="btn btn-xs btn-danger" (click)="removeTask($event, task)">
           <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove
         </a>
       </td>
