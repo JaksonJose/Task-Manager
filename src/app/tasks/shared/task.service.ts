@@ -18,6 +18,12 @@ export class TaskService {
     return tasks ? JSON.parse(tasks) : [];
   }
 
+  public fetchTaskById(id: number) : Task {
+    const tasks: Task[] = this.fetchAllTasks();
+    
+    return tasks.find(task => task.id === id);
+  }
+
   public registerTask(task: Task) : void {
     const tasks = this.fetchAllTasks();
     task.id = new Date().getTime();
@@ -25,13 +31,7 @@ export class TaskService {
     localStorage['tasks'] = JSON.stringify(tasks);
   }
 
-  private getTaskById(id: number) : Task {
-    const tasks: Task[] = this.fetchAllTasks();
-    
-    return tasks.find(task => task.id === id);
-  }
-
-  private updateTask(task: Task) : void {
+  public updateTask(task: Task) : void {
     const tasks: Task[] = this.fetchAllTasks();
 
     tasks.forEach((obj, index, objs) => {
@@ -41,14 +41,14 @@ export class TaskService {
     localStorage['task'] = JSON.stringify(tasks);
   }
 
-  private removeTask(id: number) : void {
+  public removeTask(id: number) : void {
     let tasks: Task[] = this.fetchAllTasks();
 
     tasks = tasks.filter(task => task.id !== id);
     localStorage['tasks'] = JSON.stringify(tasks);
   }
 
-  private changeTaskStatus(id: number) : void {
+  public changeTaskStatus(id: number) : void {
     const tasks: Task[] = this.fetchAllTasks();
 
     tasks.forEach((obj, index, objs) => {
