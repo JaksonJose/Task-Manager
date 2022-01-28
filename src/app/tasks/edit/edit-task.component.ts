@@ -19,7 +19,7 @@ export class EditTaskComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    let id = +this.route.snapshot.params['id']; // + means that typescript will convert strint to number
+    const id = +this.route.snapshot.params['id']; // + means that typescript will convert strint to number
     this.task = this.taskService.fetchTaskById(id);
   }
 

@@ -31,14 +31,20 @@ export class TaskService {
     localStorage['tasks'] = JSON.stringify(tasks);
   }
 
+  /**
+   * 
+   * @param task Update the task with new value
+   */
   public updateTask(task: Task) : void {
     const tasks: Task[] = this.fetchAllTasks();
 
     tasks.forEach((obj, index, objs) => {
-      if (task.id === obj.id) objs[index] = task;
+      if (task.id === obj.id) {
+        objs[index] = task;
+      }
     });
 
-    localStorage['task'] = JSON.stringify(tasks);
+    localStorage['tasks'] = JSON.stringify(tasks);
   }
 
   public removeTask(id: number) : void {

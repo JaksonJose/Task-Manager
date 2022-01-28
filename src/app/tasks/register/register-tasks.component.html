@@ -2,7 +2,7 @@
 
 <div class="well">
   <!--#formTask="ngForm" is a template variabel, so I can use it later -->
-  <form #formTask="ngForm">
+  <form #formTask="ngForm" (click)="register()">
     <div class="form-group">
       <label for="nome">Task:</label>
       <input type="text" class="form-control" id="nome" name="nome" minlength="5" required
@@ -18,7 +18,7 @@
     </div>
     <div class="form-group text-center">
       <!-- using the value containing in template variable for enable or disable the submit button -->
-      <input type="submit" class="btn btn-success" value="Cadastrar" (click)="register()" [disabled]="!formTask.form.valid">
+      <input type="submit" class="btn btn-success" value="Cadastrar" [disabled]="!formTask.form.valid">
       <a class="btn btn-default" [routerLink]="['/tasks/listing']">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" ></span> Back
       </a>
