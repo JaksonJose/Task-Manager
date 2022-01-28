@@ -19,11 +19,11 @@ describe('TaskListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('Tasks should be Array<Task>', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create', () => {
+  it('Task should be Array<Task>', () => {
     let task: Array<Task> = component.tasks;
     expect(task).toEqual(Array<Task>(...task));
   });

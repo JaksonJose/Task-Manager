@@ -3,16 +3,17 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { TaskService } from './shared';
 import { TaskListComponent } from './listing';
 import { RegisterTasksComponent } from './register';
 import { EditTaskComponent } from './edit';
+import { TaskService, TaskCompletedDirective } from './shared';
 
 @NgModule({
   declarations: [
     TaskListComponent,
     RegisterTasksComponent,
     EditTaskComponent,
+    TaskCompletedDirective,
   ],
   imports: [
     CommonModule,

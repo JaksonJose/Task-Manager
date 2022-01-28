@@ -1,6 +1,8 @@
 # TaskManager
 
-This is sample applition to learn and apply some Angular concepts. The application is for registering a task using localstorage to persistence, simulating the database.
+This is sample CRUD applition to learn and apply some Angular concepts. The application is for registering a task using localstorage to persistence, simulating the database.
+
+Later I'm going to create a real backend solution for it in .NET and Maybe in NodeJs.
 
 ## What I've learned about Angular
 - How to do routes in Angular.
@@ -10,8 +12,13 @@ This is sample applition to learn and apply some Angular concepts. The applicati
 - Two Way Data Binding.
 - Import and Export Modules.
 - Simple way to use router-outlet.
-- Conditional *ngIf
+- Conditional Directive *ngIf
+- Loop Directive *ngFor
+- Form Directive *ngform
 - Template variables
+- Create modules
+- Create services
+- Create a custom directive
 
 ##
 
